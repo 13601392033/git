@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+ 
+	<head>
+		<link href='http://fonts.googleapis.com/css?family=Oleo+Script' rel='stylesheet' type='text/css'>
+		<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+ 
+		<script type="text/javascript">
+		</script>
+		<meta charset="UTF-8">
+		<title>登录</title>
+    <script>
+        $(function () {
+            $("#upload").click(function () {
+                var formData = new FormData();
+                var data = document.getElementById("file1").files;
+                formData.append("myfile", document.getElementById("file1").files[0]);   
+                console.log(data);
+            });
+        });
+    </script>
+</head>
+<body>   
+       mfmf 选择文件:<input type="file" id="file1" multiple/><br />
+        <input type="button" id="upload" value="上传"  />
+        <img src="" style="display:none" id="imgWait" />   
+</body>
+</html>
