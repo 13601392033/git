@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            background-color:#000;
+        }
+        *{
+            margin:0;
+            padding:0;
+        }
+        .wrapper img{
+            margin:0 auto;
+            margin-top:200px;
+            display:block;
+        }
+        .wrapper{
+            height:800px;
+        }
+    </style>
+</head> 
+<body>
+    
+    <div class='wrapper'>
+        <img class="img" style="width:400px;height:200px;" src="img/0.jpg">
+    </div>
+    <input id="input" type="file" multiple onchange="console.log(arguments)">
+
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        var img = $("img");
+        var time = 1000;
+        var i = 0;
+        var inter = setInterval(function(){
+            i++;
+            time-=100;
+            if(i >= 10){
+                clearInterval(inter);
+                return;
+            }
+            img.animate({width:"0",height:"0"},function(){
+                img.attr("src","img/" + i + ".jpg");
+                //img.animate({width:"400px",height:"200px",opacity:"1"});
+                img.css({"width":"400px","height":"200px","display":"none"});
+                img.fadeIn();
+            });
+            
+        },time);
+        
+        
+    </script>
+</body>
+</html>
